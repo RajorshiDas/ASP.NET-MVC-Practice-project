@@ -1,13 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using BulkyMVC.Models;
 
 namespace BulkyMVC.Data
 {
-    public class ApplicationDbContex: DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContex(DbContextOptions<ApplicationDbContex>options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
-      
+
+        public DbSet<Category> Categories { get; set; }
+
+
     }
 }
